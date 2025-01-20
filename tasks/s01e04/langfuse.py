@@ -3,12 +3,11 @@ import os
 from langfuse.openai import openai
 from dotenv import load_dotenv
 import logging
-from langfuse import Langfuse
+from tasks.s01e04.langfuse import Langfuse
 
 # Add the parent directory to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from config.models import Models
 
 load_dotenv()
 
@@ -22,7 +21,7 @@ langfuse = Langfuse(
 )
 
 chat_completion = openai.chat.completions.create(
-    model=Models.GPT_4O_MINI,
+    model="gpt-4o-mini",
     messages=[{"role": "user", "content": "Say hello!"}]
 )
 
