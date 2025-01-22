@@ -72,7 +72,7 @@ def transcribe_audio(client, input_file_path, output_file_path):
         file_upload = client.files.upload(path=audio_path)
 
         response = client.models.generate_content(
-            model='gemini-3.0-flash-exp',
+            model='gemini-2.0-flash-exp',
             contents=[
                 types.Content(
                     role="user",
