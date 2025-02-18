@@ -80,7 +80,7 @@ if __name__ == "__main__":
     client = genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
     print("--- Performing OCR ---")
-    ocr_dictionary_output = processor.perform_ocr(client, base_path, suffix, model_name, save_output=False)
+    ocr_dictionary_output = processor.perform_ocr(client, base_path, suffix, model_name, save_output=True)
     print("\n--- Dictionary Output---")
     for filename, text in ocr_dictionary_output.items():
         print(f"{filename}:")
