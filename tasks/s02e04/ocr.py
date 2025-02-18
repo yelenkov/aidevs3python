@@ -57,7 +57,9 @@ class ImageOCRProcessor:
                 logger.info(f"Extracted text from {image_path}: {ocr_text}")
 
                 if save_output:
-                    txt_file_path = os.path.join(base_path, f"{os.path.basename(image_path).split('.')[0]}.txt")
+                    # Modify filename to include original extension
+                    original_filename_base = os.path.basename(image_path)
+                    txt_file_path = os.path.join(base_path, f"{original_filename_base}.txt")
                     with open(txt_file_path, "w") as f:
                         f.write(ocr_text)
                     logger.info(f"OCR text saved to: {txt_file_path}")
